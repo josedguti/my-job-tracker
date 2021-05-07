@@ -1,4 +1,4 @@
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.shortcuts import render
 from .models import List
 
@@ -19,3 +19,12 @@ class CreateList(CreateView):
     model = List
     fields = ['companyname', 'date']
     success_url = '/'    
+
+class UpdateList(UpdateView):
+    model = List
+    fields = ('companyname', 'date', 'contacted', 'interviewed')
+    success_url = '/'
+
+class DeleteList(DeleteView):
+    model = List
+    success_url = '/'

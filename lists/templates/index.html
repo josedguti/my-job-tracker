@@ -3,9 +3,30 @@
 {% block content %}
 
 <main>
-<h1>Hello Kiddos</h1>
-    <a href="{% url 'about' %}">About</a>
+<h1>Jobs I've Applied</h1><br>
+    <section>
+        {% for list in lists %}
+        <article>
+            <h4>{{ list.companyname }} -
+                {{ list.date }} - 
+                {% if list.contacted %}
+                    <span>Contacted - </span>
+                    {% else %}
+                    <span>Not Contacted - </span>
+                    {% endif %}
+                {% if list.interviewed %}
+                    <span>Interviewed</span>
+                    {% else %}
+                    <span>Not Interviewed</span>
+                    {% endif %}
+                    <a href="{% url 'update' list.id %}" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'delete' list.id %}" class='btn btn-danger'>Delete</a>
+            </h4>
+        </article><br>
+        {% endfor %}
+    </section>
 </main>
+
 
 
 {% endblock %}

@@ -11,12 +11,12 @@
 <main>
     <form action="" method="post">
     {% csrf_token %}
-    {{ form }}
+    {{ form.as_p}}
 
     {% if object %}
-        <input type="submit" value="Update Todo">
+        <input type="submit" value="Update Job">
     {% else %}
-    <input type="submit" value="Add Todo">
+    <input type="submit" value="Add Job" class='btn btn-success'>
     {% endif %} 
 </form>
 </main>
