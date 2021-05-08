@@ -3,8 +3,9 @@
 {% block content %}
 
 <main>
-<h1>Jobs I've Applied</h1><br>
     <section>
+        {% if lists %}
+        <h1>Jobs I've Applied</h1><br>
         {% for list in lists %}
         <article>
             <h4>{{ list.companyname }} -
@@ -24,6 +25,9 @@
             </h4>
         </article><br>
         {% endfor %}
+        {% else %}
+        <h1>I'm sorry, you don't have any jobs to track</h1>
+        {% endif %}
     </section>
 </main>
 
