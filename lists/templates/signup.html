@@ -7,9 +7,9 @@
         {% csrf_token %}
         {{ form.as_p }}
         {% for error in field.errors %}
-        <span style='color: red;'>{{ error }}</span>
+        <span>{{ error }}</span>
         {% endfor %}
-        <input type="submit" value="Sign Up">
+        <input type="submit" value="Sign Up" class='btn btn-primary'>
     </form>
 </main>
 

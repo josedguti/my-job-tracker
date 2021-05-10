@@ -5,7 +5,7 @@
 {% if object %}
     <h1>Edit: "{{ object.companyname }}"?</h1>
 {% else %}
-    <h1>Create New Todo</h1>    
+    <h1>Create New Job</h1>    
 {% endif %}        
 
 <main>
@@ -14,7 +14,7 @@
     {{ form.as_p}}
 
     {% if object %}
-        <input type="submit" value="Update Job">
+        <input type="submit" value="Update Job" class="btn btn-success">
     {% else %}
     <input type="submit" value="Add Job" class='btn btn-success'>
     {% endif %} 
